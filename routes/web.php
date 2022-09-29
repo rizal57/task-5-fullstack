@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use Illuminate\Support\Facades\{Route, Auth};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('article', [ArticleController::class, 'index'])->name('article.index');
+Route::get('article/{article:slug}', [ArticleController::class, 'show'])->name('article.show');
