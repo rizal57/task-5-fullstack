@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Article</h1>
+    <h1 class="h2">Category</h1>
 </div>
 <div>
-    <a href="{{ route('dashboard.article.create') }}" class="btn btn-primary mb-3">Add Article</a>
+    <a href="{{ route('dashboard.category.create') }}" class="btn btn-primary mb-3">Add Category</a>
 </div>
 <div class="row">
     <div class="col">
@@ -22,23 +22,19 @@
       <thead>
         <tr>
           <th scope="col">No</th>
-          <th scope="col">Title</th>
-          <th scope="col">Excerpt</th>
-          <th scope="col">Category</th>
+          <th scope="col">Name</th>
           <th scope="col">#</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($articles as $article)
+        @foreach ($categories as $category)
         <tr>
           <td>{{ $loop->iteration }}</td>
-          <td>{{ $article->title }}</td>
-          <td>{!! $article->excerpt !!}</td>
-          <td>{{ $article->category->name }}</td>
+          <td>{{ $category->name }}</td>
           <td>
             <div class="d-flex gap-1">
-                <a href="{{ route('dashboard.article.edit', $article) }}" class="btn btn-info">Edit</a>
-                <form action="{{ route('dashboard.article.destroy', $article) }}" method="post">
+                <a href="{{ route('dashboard.category.edit', $category) }}" class="btn btn-info">Edit</a>
+                <form action="{{ route('dashboard.category.destroy', $category) }}" method="post">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure...?')">Delete</button>

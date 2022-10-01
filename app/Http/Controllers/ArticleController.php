@@ -10,7 +10,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('articles.index', [
-            'title' => "Articel",
+            'title' => "Article",
             'articles' => Article::latest()->paginate(6),
         ]);
     }

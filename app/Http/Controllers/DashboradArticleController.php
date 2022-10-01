@@ -20,7 +20,7 @@ class DashboradArticleController extends Controller
     {
         return view('dashboard.articles.create', [
             'title' => "Create Article",
-            'categories' => Category::all(),
+            'categories' => Category::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -50,7 +50,7 @@ class DashboradArticleController extends Controller
         return view('dashboard.articles.edit', [
             'title' => "Edit Article",
             'article' => $article,
-            'categories' => Category::all(),
+            'categories' => Category::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 

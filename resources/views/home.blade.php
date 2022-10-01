@@ -16,7 +16,7 @@
                         <img src="https://source.unsplash.com/1200x400" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h4 class="bg-dark p-2 rounded bg-opacity-50"><strong>{{ $article->title }}</strong></h4>
-                            <p class="bg-dark bg-opacity-50 p-2 rounded">{!! $article->excerpt !!}</p>
+                            <div class="bg-dark bg-opacity-50 p-2 rounded">{!! $article->excerpt !!}</div>
                         </div>
                         </div>
                     @endforeach
@@ -37,7 +37,7 @@
         @foreach ($articlecontents as $article)
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="https://source.unsplash.com/1200x400?{{ $article->category->name }}" class="card-img-top" alt="...">
+                    <img src="https://source.unsplash.com/1200x400" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">{{ $article->title }}</h5>
                     <p class="card-text">{!! $article->excerpt !!}</p>
