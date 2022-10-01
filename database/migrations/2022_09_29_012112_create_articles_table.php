@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('excerpt');
             $table->string('image')->nullable();
             $table->foreignId('user_id');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->nullable();
             $table->timestamps();
         });
     }

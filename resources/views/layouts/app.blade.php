@@ -31,6 +31,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
+                            <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ Request::is('article*') ? 'active' : '' }}" aria-current="page" href="{{ route('article.index') }}">Article</a>
                         </li>
                     </ul>
@@ -57,6 +60,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        {{ __('Home') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('dashboard.index') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
