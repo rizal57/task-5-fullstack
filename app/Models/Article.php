@@ -19,6 +19,8 @@ class Article extends Model
         'image',
     ];
 
+    protected $with = 'category';
+
     public function user()
     {
         return $this->belongsTo(User::class);
